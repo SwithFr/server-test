@@ -1,0 +1,23 @@
+doctype html
+html( lang="en" )
+    head
+        meta( charset="utf-8" )/
+        title My first express site
+        style
+            |    body {
+            |        font: 18px/1.6 "Avenir Next", sans-serif;
+            |    }
+    body
+    
+        //- balise= variable
+        h1= page_title
+        
+        //- | Pour mettre le contenu sur plusieurs lignes
+        p  
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, 
+            | vero, optio delectus sunt assumenda odio, eum officia ipsum officiis 
+            br/
+            | culpa dignissimos esse similique sint dicta odit sit natus accusantium hic!
+        
+        figure
+            img( src="./images/#{ img_src }", alt="Dark Vador is riding", width="400" )/
