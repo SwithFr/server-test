@@ -4,12 +4,20 @@ body {
     margin: 0 auto;
 }
 
-ul {
+h1 {
+    text-align: center;
+}
+
+table, tr {
+    width: 100%;
     margin: 0;
     padding: 0;
 }
 
-li {
-    list-style: none;
-    margin: 1em 0;
+td, th {
+    padding: .5em 0;
+}
+
+.count {
+    text-align: center;
 }
