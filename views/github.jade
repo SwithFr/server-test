@@ -6,8 +6,18 @@ html( lang="en" )
         link( rel="stylesheet", href="./css/github.css" )   
     body
     
-        h1 Mes depot Github
+        h1 My Github repositories
         
-        ul
-            each name in repos
-                li= name
+        table
+            thead
+                tr
+                    th Name
+                    th Forks
+                    th Issues
+            body
+                each repo in repos
+                    tr
+                        td
+                            a( href="#{ repo[ 1 ] }" )= repo[ 0 ]
+                        td.count= repo[ 2 ]
+                        td.count= repo[ 3 ]
