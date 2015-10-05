@@ -11,7 +11,7 @@ var express = require( "express" ),
 var oApp,
     github = new Github( {
         username: "swithFr",
-        password: '***',
+        password: "*****",
         auth: "basic"
     } ),
     user = github.getUser();
