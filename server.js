@@ -11,7 +11,7 @@ var express = require( "express" ),
 var oApp,
     github = new Github( {
         username: "swithFr",
-        password: "_caramelofr-8",
+        password: '***',
         auth: "basic"
     } ),
     user = github.getUser();
@@ -44,11 +44,18 @@ oApp.get( "/", function( oRequest, oResponse ) {
 
 oApp.get( "/github", function( oRequest, oResponse ) {
 
-    var aRepos = [];
+    var oCurrentRepo,
+        aRepos = [],
+        sRepoName ,
+        sRepoUrl,
+        iRepoForks,
+        iRepoIssuesCount;
 
     user.userRepos( "SwithFr", function( err, repos ) {
         for (var k in repos) {
-            aRepos.push( repos[ k ].full_name );
+            oCurrentRepo = repos[ k ];
+            sRepoName = oCurrentRepo.full_name;
+            aRepos.push( [ sRepoName, oCurrentRepo.svn_url, oCurrentRepo.forks_count, oCurrentRepo.open_issues_count ] );
         }
 
         oResponse.render( "github.jade", {
